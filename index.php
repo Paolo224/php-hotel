@@ -37,12 +37,6 @@ $hotels = [
     ],
 ];
 
-function getArrayHotel($arg1)
-{
-    foreach ($arg1 as $field => $value) {
-        echo '<p>' . $field . ': ' . $value . '</p>';
-    }
-}
 
 ?>
 <!DOCTYPE html>
@@ -54,14 +48,56 @@ function getArrayHotel($arg1)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
     <link href="https:cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <?php
-    foreach ($hotels as $hotel) {
-        echo '<div>' . getArrayHotel($hotel) .  '</div>';
-    }
-    ?>
+    <table>
+        <thead>
+            <tr>
+                <th>Hotel</th>
+                <th>Descrizione</th>
+                <th>Parcheggio</th>
+                <th>Voto</th>
+                <th>Distanza dal centro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            foreach ($hotels as $hotel) {
+            ?>
+                <tr>
+                    <td>
+                        <?php
+                        echo $hotel['name'];
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $hotel['description'];
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $hotel['parking'];
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $hotel['vote'];
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $hotel['distance_to_center'];
+                        ?>
+                    </td>
+                </tr>
+            <?php
+            }
+            ?>
+        </tbody>
+    </table>
 </body>
 
 </html>
