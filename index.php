@@ -37,6 +37,13 @@ $hotels = [
     ],
 ];
 
+function getArrayHotel($arg1)
+{
+    foreach ($arg1 as $field => $value) {
+        echo '<p>' . $field . ': ' . $value . '</p>';
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,9 +59,7 @@ $hotels = [
 <body>
     <?php
     foreach ($hotels as $hotel) {
-        foreach ($hotel as $field => $value) {
-            echo '<p>' . $field . ': ' . $value . '</p>';
-        }
+        echo '<div>' . getArrayHotel($hotel) .  '</div>';
     }
     ?>
 </body>
