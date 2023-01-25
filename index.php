@@ -51,13 +51,11 @@ $hotels = [
 
 <body>
     <?php
-    foreach ($hotels as $key => $hotel) {
-        echo $hotel;
+    foreach ($hotels as $hotel) {
+        foreach ($hotel as $field => $value) {
+            echo '<p>' . $field . ': ' . $value . '</p>';
+        }
     }
-
-    //  for ($i = 0; $i < count($hotels); $i++) {
-    //      echo $hotels[$i];
-    //  }
     ?>
 </body>
 
